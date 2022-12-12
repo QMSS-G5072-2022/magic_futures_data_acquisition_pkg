@@ -23,3 +23,6 @@ Interested in contributing? Check out the contributing guidelines. Please note t
 ## Credits
 
 `magic_futures_data_acquisition_pkg` was created with [`cookiecutter`](https://cookiecutter.readthedocs.io/en/latest/) and the `py-pkgs-cookiecutter` [template](https://github.com/py-pkgs/py-pkgs-cookiecutter).
+
+## Online Documentation
+https://futures-data-acquisition-pkg.readthedocs.io/en/latest/
