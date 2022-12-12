@@ -1,0 +1,93 @@
+:py:mod:`magic_futures_data_acquisition_pkg.magic_futures_data_acquisition_pkg`
+===============================================================================
+
+.. py:module:: magic_futures_data_acquisition_pkg.magic_futures_data_acquisition_pkg
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   magic_futures_data_acquisition_pkg.magic_futures_data_acquisition_pkg.FuturesInfo
+
+
+
+
+.. py:class:: FuturesInfo(f_start, f_end, f_kind, the_path)
+
+   .. py:attribute:: data_exist
+      :annotation: = []
+
+      
+
+   .. py:attribute:: empty
+      :annotation: = []
+
+      
+
+   .. py:method:: get_large_data()
+
+      Get the futures data and download the datasets to local
+
+      :param f_start: A string
+      :type f_start: time string, the time you start collecting the data
+      :param f_end: A string
+      :type f_end: time string, the time you end collecting the data
+      :param f_kind: A string
+      :type f_kind: the substring of the futures ticker. Category of futures types
+      :param the_path: A string
+      :type the_path: the location you want to download data to
+
+      :rtype: print out all the futures data downloaded. Return one of the future's dataframe. Downloaded all specified futures to specified location
+
+      .. rubric:: Examples
+
+      >>> from magic_futures_data_acquisition_pkg import magic_futures_data_acquisition_pk
+      >>> get_large = FuturesInfo('2020-01-01','2020-03-01','AP','/Users/tylerwang/Desktop/get_futures_data/')
+      >>> get_large.get_large_data()
+      ['', 'AP1805.XZCE', 'AP1807.XZCE', 'AP1810.XZCE', 'AP1811.XZCE', 'AP1812.XZCE', 'AP1901.XZCE', 'AP1903.XZCE', 'AP1905.XZCE', 'AP1907.XZCE', 'AP1910.XZCE', 'AP1911.XZCE', 'AP1912.XZCE', 'AP2001.XZCE', 'AP2003.XZCE', 'AP2005.XZCE', 'AP2007.XZCE', 'AP2010.XZCE', 'AP2011.XZCE', 'AP2012.XZCE', 'AP2101.XZCE', 'AP2103.XZCE', 'AP2105.XZCE', 'AP2110.XZCE', 'AP2111.XZCE', 'AP2112.XZCE', 'AP2201.XZCE', 'AP2203.XZCE', 'AP2204.XZCE', 'AP2205.XZCE', 'AP2210.XZCE', 'AP2211.XZCE', 'AP2212.XZCE', 'AP2301.XZCE', 'AP2303.XZCE', 'AP2304.XZCE', 'AP2305.XZCE', 'AP2310.XZCE', 'AP2311.XZCE', 'AP8888.XZCE', 'AP9999.XZCE']
+              time    open    close   high    low     volume  money
+      0       2020-01-02      7740.0  7741.0  7791.0  7706.0  93362.0 7.237311e+09
+      1       2020-01-03      7736.0  7589.0  7767.0  7580.0  149249.0        1.148803e+10
+      2       2020-01-06      7560.0  7474.0  7577.0  7428.0  168525.0        1.261648e+10
+      3       2020-01-07      7474.0  7501.0  7528.0  7443.0  107722.0        8.070493e+09
+      4       2020-01-08      7505.0  7497.0  7556.0  7424.0  128109.0        9.595661e+09
+      5       2020-01-09      7497.0  7360.0  7545.0  7358.0  145093.0        1.083167e+10
+
+
+   .. py:method:: get_missing_data()
+
+      Find the missing date in existing datasets and download the missing data to local
+
+      :param f_start: A string
+      :type f_start: time string, the time you start collecting the data
+      :param f_end: A string
+      :type f_end: time string, the time you end collecting the data
+      :param f_kind: A string
+      :type f_kind: the substring of the futures ticker. Category of futures types
+      :param the_path: A string
+      :type the_path: the location you want to download data to
+
+      :returns: * *print out the missing date for all existing futures and search for the missing date in API and download the datasets to local*
+                * *return the new dataframe contains missing data*
+
+      .. rubric:: Examples
+
+      >>> from magic_futures_data_acquisition_pkg import magic_futures_data_acquisition_pk
+      >>> get_miss = FuturesInfo('2020-01-01', '2020-02-01', 'AP','/Users/tylerwang/Desktop/get_futures_data/')
+      >>> get_miss.get_missing_data()
+      AP1805.XZCE:['2020-01-01', '2020-01-02', '2020-01-03', '2020-01-06', '2020-01-07', '2020-01-08', '2020-01-09', '2020-01-10', '2020-01-13', '2020-01-14', '2020-01-15', '2020-01-16', '2020-01-17', '2020-01-20', '2020-01-21', '2020-01-22', '2020-01-23', '2020-01-24', '2020-01-27', '2020-01-28', '2020-01-29', '2020-01-30', '2020-01-31']
+              time    open    close   high    low     volume  money
+      0       2020-01-02      7740.0  7741.0  7791.0  7706.0  93362.0 7.237311e+09
+      1       2020-01-03      7736.0  7589.0  7767.0  7580.0  149249.0        1.148803e+10
+      2       2020-01-06      7560.0  7474.0  7577.0  7428.0  168525.0        1.261648e+10
+      3       2020-01-07      7474.0  7501.0  7528.0  7443.0  107722.0        8.070493e+09
+      4       2020-01-08      7505.0  7497.0  7556.0  7424.0  128109.0        9.595661e+09
+      5       2020-01-09      7497.0  7360.0  7545.0  7358.0  145093.0        1.083167e+10
+
+
+

@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "magic_futures_data_acquisition_pkg"
+version = "0.1.0"
+description = "The package is used to acquist futures data from JoinQuant. The functions can automatically download the data to local. Because the JoinQuant API has access limit, the funcnction can automatically detect where you left last time and continue downloading new data. Also, it can help detect the missing data."
+authors = ["zw2744"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pandas = "^1.5.2"
+jqdatasdk = "^1.8.11"
+datetime = "^4.7"
+python-dotenv = "^0.21.0"
+
+[tool.poetry.dev-dependencies]
+
+[tool.poetry.group.dev.dependencies]
+myst-nb = "^0.17.1"
+sphinx-autoapi = "^2.0.0"
+sphinx-rtd-theme = "^1.1.1"
+pytest = "^7.2.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

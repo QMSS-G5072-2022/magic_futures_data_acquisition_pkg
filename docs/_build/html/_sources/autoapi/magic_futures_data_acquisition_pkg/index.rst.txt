@@ -1,0 +1,23 @@
+:py:mod:`magic_futures_data_acquisition_pkg`
+============================================
+
+.. py:module:: magic_futures_data_acquisition_pkg
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   magic_futures_data_acquisition_pkg/index.rst
+
+
+Package Contents
+----------------
+
+.. py:data:: __version__
+   
+
+   
+
